@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ...existing content... -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Join & Chat</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <!-- ...existing content... -->
+</head>
+<body>
+  <!-- ...existing content... -->
+  <main class="container">
+    <section class="card">
+      <h1 class="title">Enter your PS</h1>
+
+      <label class="field">
+        <span class="label">PS</span>
+        <input id="psInput" type="text" placeholder="Type your PS" autocomplete="off">
+      </label>
+
+      <label class="field">
+        <span class="label">Join link (URL)</span>
+        <input id="linkInput" type="url" value="https://roblox.com" placeholder="https://example.com/room" autocomplete="off">
+      </label>
+
+      <div class="divider"></div>
+
+      <p class="disclaimer">
+        Secret required to join restricted rooms.
+      </p>
+
+      <label class="field inline">
+        <input id="restrictCheckbox" type="checkbox" checked>
+        <span class="label">Only allow people with: </span>
+        <select id="requiredAccess">
+          <option value="god" selected>god</option>
+          <option value="rare">rare</option>
+          
