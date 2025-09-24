@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ...existing content... -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Join & Chat</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <!-- ...existing content... -->
+</head>
+<body>
+  <!-- ...existing content... -->
+  <main class="container">
+    <section class="card">
+      <h1 class="title">Enter your PS</h1>
+
+      <label class="field">
+        <span class="label">PS</span>
+        <input id="psInput" type="text" placeholder="Type your PS" autocomplete="off">
+      </label>
+
+      <label class="field">
+        <span class="label">Join link (URL)</span>
+        <input id="linkInput" type="url" value="https://roblox.com" placeholder="https://example.com/room" autocomplete="off">
+      </label>
+
+      <div class="divider"></div>
+
+      <p class="disclaimer">
+        Secret required to join restricted rooms.
+      </p>
+
+      <label class="field inline">
+        <input id="restrictCheckbox" type="checkbox" checked>
+        <span class="label">Only allow people with: </span>
+        <select id="requiredAccess">
+          <option value="god" selected>god</option>
+          <option value="rare">rare</option>
+          <option value="bad">bad</option>
+          <option value="secret">secret</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span class="label">Your role</span>
+        <select id="userRole">
+          <option value="god" selected>god</option>
+          <option value="rare">rare</option>
+          <option value="bad">bad</option>
+          <option value="secret">secret</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span class="label">Do you have secret?</span>
+        <select id="secretConfirm">
+          <option value="no" selected>no</option>
+          <option value="yes">yes</option>
+        </select>
+      </label>
+
+      <button id="saveJoinBtn" class="primary">Save and join</button>
+      <div id="secretSpinner" class="spinner" aria-hidden="true" title="Checking secret"></div>
+    </section>
+
+    <section class="card chat">
+      <div class="server-panel">
+        <div class="server-title">Best Server — Add Server</div>
+        <button id="openAddServer" class="secondary">Add Server</button>
+      </div>
+      <h2 class="subtitle">Chat</h2>
+      <div id="chatLog" class="chat-log" aria-live="polite"></div>
+      <div class="chat-controls">
+        <input id="chatMessage" type="text" placeholder="Type a message to publish…" autocomplete="off">
+        <input id="chatDesc" type="text" placeholder="Add a short description (optional)" autocomplete="off" class="desc-input">
+        <button id="publishBtn" class="secondary">Publish in chat</button>
+        <button id="clearViewBtn" class="secondary" title="Clear only your view">Clear my view</button>
+        <!-- decorative floating images -->
+        <img class="float-img left" src="https://images.unsplash.com/photo-1542293787938-c9e299b88036?w=80&q=60&auto=format&fit=crop" alt="" aria-hidden="true">
+        <img class="float-img right" src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=80&q=60&auto=format&fit=crop" alt="" aria-hidden="true">
+      </div>
+    </section>
+
+    <section class="card chat dark" id="serversCard">
+      <div class="server-panel">
+        <div class="server-title">Servers (read-only)</div>
+      </div>
+      <h2 class="subtitle">Server Feed</h2>
+      <div id="serverLog" class="chat-log" aria-live="polite"></div>
+    </section>
+
+  </main>
+
+  <!-- add-server modal / page fallback -->
+  <div id="addServerModal" class="modal" aria-hidden="true">
+    <div class="modal-inner">
+      <h3>Add Server</h3>
+      <label class="field"><span class="label">Enter Link</span><input id="srvLink" type="url" placeholder="https://example.com"></label>
+      <label class="field"><span class="label">Job ID</span><input id="srvJob" type="text" placeholder="Job ID"></label>
+      <label class="field"><span class="label">Place ID</span><input id="srvPlace" type="text" placeholder="Place ID"></label>
+      
